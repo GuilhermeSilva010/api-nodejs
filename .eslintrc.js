@@ -1,0 +1,78 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  overrides: [],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["@typescript-eslint"],
+  rules: {
+    "one-var": "off",
+    indent: ["error", 2],
+    "consistent-return": 2,
+    indent: [1, 4],
+    "no-else-return": 1,
+    semi: [1, "always"],
+    "space-unary-ops": 2,
+  },
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+  ],
+  parserOptions: {
+    // project: "./tsconfig.json",
+  },
+  plugins: ["@typescript-eslint", "autofix", "prettier"],
+  rules: {
+    "constructor-super": "error",
+    "array-callback-return": "error",
+    "for-direction": "error",
+    // "no-console": "error",
+    "arrow-body-style": "error",
+    "prettier/prettier": "error",
+    // "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/no-unused-vars": "error",
+    // "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        prefer: "type-imports",
+      },
+    ],
+    "no-empty-function": ["error", { allow: ["constructors"] }],
+    // "no-duplicate-imports": ["error", { includeExports: true }],
+    "no-restricted-imports": [
+      "error",
+      {
+        patterns: ["../"],
+      },
+    ],
+    // "sort-imports": [
+    //   "error",
+    //   {
+    //     memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+    //     allowSeparatedGroups: true,
+    //   },
+    // ],
+    "getter-return": "error",
+    "no-cond-assign": "error",
+    "no-compare-neg-zero": "error",
+    "no-class-assign": "error",
+    "no-await-in-loop": "error",
+    "no-const-assign": "error",
+    "no-constant-binary-expression": "error",
+    "no-constant-condition": "error",
+    "no-constructor-return": "error",
+    "no-debugger": "error",
+    "no-alert": "error",
+    "no-continue": "error",
+    "no-duplicate-case": "error",
+  },
+  root: true,
+};
