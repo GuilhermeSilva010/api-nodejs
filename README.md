@@ -19,10 +19,6 @@
 - Swagger  `3.0`  
 - Express  `4.18.2` 
 
-# Definições do projeto
-
-## Metodologias e Designs
-
 # Outros padrões de desenvolvimento
 
 Adoção de praticas e padrões para o processo de desenvolvimento.
