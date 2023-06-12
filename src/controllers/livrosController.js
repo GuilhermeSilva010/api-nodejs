@@ -3,6 +3,9 @@ import livros from "../models/Livro.js";
 class LivroController {
 
   static listarLivros = (req, res) => {
+     /* 	#swagger.tags = ['Livros']
+        #swagger.description = 'Endpoint to list all books' */
+
     livros.find()
       .populate('autor')
       .exec((err, livros) => {
@@ -11,6 +14,9 @@ class LivroController {
   }
 
   static listarLivroPorId = (req, res) => {
+    /* 	#swagger.tags = ['Livros']
+        #swagger.description = 'Endpoint to get book by id' */
+
     const id = req.params.id;
 
     livros.findById(id)
@@ -25,6 +31,9 @@ class LivroController {
   }
 
   static cadastrarLivro = (req, res) => {
+    /* 	#swagger.tags = ['Livros']
+        #swagger.description = 'Endpoint to insert new book' */
+
     let livro = new livros(req.body);
 
     livro.save((err) => {
@@ -38,6 +47,9 @@ class LivroController {
   }
 
   static atualizarLivro = (req, res) => {
+    /* 	#swagger.tags = ['Livros']
+        #swagger.description = 'Endpoint to update book by id with new informations' */
+
     const id = req.params.id;
 
     livros.findByIdAndUpdate(id, {$set: req.body}, (err) => {
@@ -50,6 +62,9 @@ class LivroController {
   }
 
   static excluirLivro = (req, res) => {
+    /* 	#swagger.tags = ['Livros']
+        #swagger.description = 'Endpoint to exclude book by id' */
+
     const id = req.params.id;
 
     livros.findByIdAndDelete(id, (err) => {
@@ -62,6 +77,9 @@ class LivroController {
   }
 
   static listarLivroPorEditora = (req, res) => {
+    /* #swagger.tags = ['Livros']
+       #swagger.description = 'Endpoint to get book by publishing company' */
+
     const editora = req.query.editora
 
     livros.find({'editora': editora}, {}, (err, livros) => {
@@ -69,9 +87,6 @@ class LivroController {
 
     })
   }
-
-
-
 }
 
 export default LivroController

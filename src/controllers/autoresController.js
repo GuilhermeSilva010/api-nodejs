@@ -3,12 +3,18 @@ import autores from "../models/Autor.js";
 class AutorController {
 
   static listarAutores = (req, res) => {
+    /* 	#swagger.tags = ['Autores']
+        #swagger.description = 'Endpoint to get all authors' */
+
     autores.find((err, autores) => {
       res.status(200).json(autores)
   })
   }
 
   static listarAutorPorId = (req, res) => {
+    /* 	#swagger.tags = ['Autores']
+        #swagger.description = 'Endpoint to get author by id' */
+
     const id = req.params.id;
 
     autores.findById(id, (err, autores) => {
@@ -21,6 +27,9 @@ class AutorController {
   }
 
   static cadastrarAutor = (req, res) => {
+    /* 	#swagger.tags = ['Autores']
+            #swagger.description = 'Endpoint to insert new author' */
+
     let autor = new autores(req.body);
 
     autor.save((err) => {
@@ -34,6 +43,9 @@ class AutorController {
   }
 
   static atualizarAutor = (req, res) => {
+    /* 	#swagger.tags = ['Autores']
+            #swagger.description = 'Endpoint to update informations about the author' */  
+
     const id = req.params.id;
 
     autores.findByIdAndUpdate(id, {$set: req.body}, (err) => {
@@ -46,6 +58,9 @@ class AutorController {
   }
 
   static excluirAutor = (req, res) => {
+    /* 	#swagger.tags = ['Autores']
+            #swagger.description = 'Endpoint to remove the author' */  
+
     const id = req.params.id;
 
     autores.findByIdAndDelete(id, (err) => {
