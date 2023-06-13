@@ -51,7 +51,7 @@ A aplicação será iniciada na porta default [3000]
 
 # Links Uteis
 
-- Swagger-ui ([Swagger](http://localhost:3000/doc))
+- Swagger-ui ([Swagger](http://localhost:3000/swagger))
 - Health Check: 
     - Info ([Info](localhost:3000/management/info))
     - Health ([Health](localhost:3000/management/health))
